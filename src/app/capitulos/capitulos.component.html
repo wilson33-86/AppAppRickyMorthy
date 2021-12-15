@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <input type="text" #dato class="form-control" value="" (keyup)="setUrlBuscarCapitulos(dato.value)" placeholder="Buscar..." style="cursor: pointer">
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive table-striped text-white" style="text-align: center;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Capitulo</th>
+                    <th scope="col">Personajes</th>
+                    <th scope="col">Fecha de presentación </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let listaCapitulos of listadoCapitulos" class="table-success text-dark">
+                    <th scope="row" style="vertical-align: middle;"> {{ listaCapitulos.name }} </th>
+                   
+                    <td>
+                        <ul style="list-style: none;">
+                            <u><li [routerLink]="['capitulos-personajes']" *ngFor="let personaje of listaCapitulos.personajes" style="cursor: pointer" (click)="verCapitulos( personaje )">
+                                {{personaje.name}}
+                            </li></u>
+                        </ul>
+                    </td>
+                    <td style="vertical-align: middle;"> {{ listaCapitulos.air_date }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

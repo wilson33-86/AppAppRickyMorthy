@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div class=" row row-cols-1 row-cols-md-1">
+        <div class="col-12 mb-4">
+            <div class="card mb-3 text-white bg-dark border border-light" style=" background-color: rgb(60, 62, 68);">
+                <div class="row no-gutters">
+                    <div class="col-md-5">
+                        <img [src]="personaje.image" class="card-img-top " alt="..." style=" max-height: 350px; max-width: 100%;">
+                    </div>
+                    <div class="col-md-7 mb-0">
+                        <div class="card-body col-md-12" style="padding: 15px;">
+                            <h2 class="card-title text1 mb-10" style="font-size: 28px; color:green;font-weight: 700;"> {{ personaje.name }} </h2>
+                            <p class="card-text mb-0"><small class="text-muted" style="font-size: 20px;"> Especie: </small></p>
+                            <p class="card-text text2" style="font-size: 20px;"> {{ personaje.species }}</p>
+                            <p class="card-text mb-0"><small class="text-muted" style="font-size: 20px;"> Estado: </small></p>
+                            <p class="card-text text3" style="font-size: 20px;"> {{ personaje.status }}</p>
+                            <p class="card-text mb-0"><small class="text-muted" style="font-size: 20px;"> Genero: </small></p>
+                            <p class="card-text text4" style="font-size: 20px;"> {{ personaje.gender }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped  text-white table-responsive " style="text-align: center;">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Capitulos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let infoCapitulos of capitulos" class="table-success text-dark">
+                    <td style="vertical-align: middle;">
+                        <ul style="list-style: none;">
+                            <li style="font-weight: 500;"> {{ infoCapitulos.name }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

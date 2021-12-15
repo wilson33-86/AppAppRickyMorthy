@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="row">
+        <input type="text" #dato class="form-control" value="" (keyup)="setUrlbuscarPersonajes(dato.value)" placeholder="Buscar..." style="cursor: pointer">
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class=" row row-cols-1 row-cols-md-2 row-cols-lg-3  ">
+        <div *ngFor="let listaPersonajes of listadoPersonajes " class="col mb-4">
+            <div class="card mb-3 text-white bg-light border border-dark" style=" background-color: rgb(60, 62, 68);">
+                <div class="row no-gutters">
+                    <div class="col-md-5">
+                        <img [src]="listaPersonajes.image" class="card-img-top h-100" alt="..." style=" height: 200px; ">
+                    </div>
+                    <div class="col-md-7 mb-0">
+                        <div class="card-body col-md-12" style="padding: 15px;">
+                            <h2 class="card-title text1 mb-10" style="font-size: 22px; color:green; font-weight: 700;"> {{ listaPersonajes.name }} </h2>
+                            <p class="card-text mb-0"><small class="text-muted"> Especie: </small></p>
+                            <p class="card-text text2" style="color:rgb(5, 34, 25)"> {{ listaPersonajes.species }}</p>
+                            <p class="card-text mb-0"><small class="text-muted"> Estado: </small></p>
+                            <p class="card-text text3" style="color:rgb(5, 34, 25)" > {{ listaPersonajes.status }}</p>
+                            <p class="card-text mb-0"><small class="text-muted"> Genero: </small></p>
+                            <p class="card-text text4" style="color:rgb(5, 34, 25)"> {{ listaPersonajes.gender }}</p>
+                            <a [routerLink]="['capitulos-personajes']" class="btn btn-outline-dark  btn-lg btn-block" (click)="verCapitulos( listaPersonajes )">ver capitulos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
